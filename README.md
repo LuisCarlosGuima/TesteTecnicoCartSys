@@ -1,4 +1,3 @@
-```markdown
 ## 🚀 Tecnologias Utilizadas
 
 * **[.NET 8](https://dotnet.microsoft.com/)**: Plataforma principal de desenvolvimento.
@@ -19,6 +18,7 @@
 Siga o passo a passo abaixo para configurar o ambiente de desenvolvimento:
 
 ### 1. Clonar o Repositório
+
 ```bash
 git clone [URL_DO_SEU_REPOSITORIO]
 cd cartsys-backend
@@ -85,7 +85,3 @@ O projeto foi refatorado para seguir estritamente os princípios de **Clean Arch
 * **Services (Regra de Negócio):** Onde a lógica da aplicação reside. Fazem a ponte entre os Controllers e os Repositórios. Ex: `DesenvolvedorService`, `AuthService`.
 * **Repositories (Persistência):** Isolam o Entity Framework Core. Os serviços não sabem como os dados foram salvos, apenas interagem com as interfaces (`ICidadeRepository`, `IUsuarioRepository`, etc).
 * **Notification Pattern:** Utilização de uma interface `INotifications` injetada via Injeção de Dependência para capturar e centralizar erros de domínio, eliminando o lançamento excessivo de `Exceptions` para controle de fluxo.
-
-```
-
-```
