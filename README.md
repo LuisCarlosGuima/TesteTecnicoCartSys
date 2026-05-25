@@ -1,5 +1,4 @@
 ```markdown
-
 ## 🚀 Tecnologias Utilizadas
 
 * **[.NET 8](https://dotnet.microsoft.com/)**: Plataforma principal de desenvolvimento.
@@ -35,15 +34,16 @@ A imagem utilizada no desenvolvimento é a `mcr.microsoft.com/mssql/server:2022-
 **Passo A: Baixar a imagem do SQL Server**
 
 ```bash
-docker pull [mcr.microsoft.com/mssql/server:2022-latest](https://mcr.microsoft.com/mssql/server:2022-latest)
+docker pull mcr.microsoft.com/mssql/server:2022-latest
 
 ```
 
 **Passo B: Criar e rodar o container**
+
 Execute o comando abaixo para instanciar o banco de dados com os parâmetros de infraestrutura e credenciais idênticos aos configurados no projeto:
 
 ```bash
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Admin@#123" -p 1433:1433 --name teste-tecnico --hostname teste-tecnico --memory="6g" --cpus="4" -v sql_data:/var/opt/mssql --restart unless-stopped -d [mcr.microsoft.com/mssql/server:2022-latest](https://mcr.microsoft.com/mssql/server:2022-latest)
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Admin@#123" -p 1433:1433 --name teste-tecnico --hostname teste-tecnico --memory="6g" --cpus="4" -v sql_data:/var/opt/mssql --restart unless-stopped -d mcr.microsoft.com/mssql/server:2022-latest
 
 ```
 
