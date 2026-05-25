@@ -85,3 +85,11 @@ O projeto foi refatorado para seguir estritamente os princípios de **Clean Arch
 * **Services (Regra de Negócio):** Onde a lógica da aplicação reside. Fazem a ponte entre os Controllers e os Repositórios. Ex: `DesenvolvedorService`, `AuthService`.
 * **Repositories (Persistência):** Isolam o Entity Framework Core. Os serviços não sabem como os dados foram salvos, apenas interagem com as interfaces (`ICidadeRepository`, `IUsuarioRepository`, etc).
 * **Notification Pattern:** Utilização de uma interface `INotifications` injetada via Injeção de Dependência para capturar e centralizar erros de domínio, eliminando o lançamento excessivo de `Exceptions` para controle de fluxo.
+
+## 🔮 Próximos Passos (Melhorias Futuras)
+
+Embora a aplicação atenda aos requisitos do teste técnico, há sempre espaço para evolução. Algumas melhorias mapeadas para o futuro incluem:
+
+* **Validação de Requests:** Implementar uma biblioteca como o `FluentValidation` para criar uma camada robusta de validação nos objetos de entrada (Requests). Isso garantiria que os dados (como obrigatoriedade e tamanho de campos) fossem validados antes mesmo de chegarem à camada de Service.
+* **Expansão dos Testes:** Aumentar a cobertura dos testes unitários já existentes e adicionar Testes de Integração para validar o fluxo completo da aplicação (do Endpoint até o Banco de Dados).
+* **Logs de Auditoria (Change Logs):** Criar um sistema de rastreamento para registrar o histórico de alterações das entidades principais. A infraestrutura para isso já está adiantada: a classe base (`CartSysController`) já possui os métodos de extração de *Claims* do JWT (como `GetUserId()` e `GetEmailUserId()`), estando perfeitamente preparada para identificar o autor de cada requisição e vincular essa informação aos logs de alteração.
