@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Domain/Domain.csproj" Id="afbfa89f-7890-472b-a304-5240d82c040f" />
+  <Project Path="Repository/Repository.csproj" Id="0b2e8319-adbf-4558-84f7-4ef5076760bc" />
+  <Project Path="Service/Service.csproj" Id="e672d86a-723d-4d47-8c3a-1ac40e15fa96" />
+  <Project Path="TesteTecnicoCartSys/TesteTecnicoCartSys.csproj" />
+</Solution>
